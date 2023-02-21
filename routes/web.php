@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\PostController; //Add
+use App\Http\Controllers\LikeController;
+use App\Models\Post; //Add
+use App\Models\Like;
 
 /*
 |--------------------------------------------------------------------------
