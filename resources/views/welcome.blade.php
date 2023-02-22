@@ -16,9 +16,56 @@
         </style>
     </head>
     
-    
-    <body>
-    
-    
+    <body class="antialiased">
+        
+            @if (Route::has('login'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">温泉について</a>
+                    @else
+                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">ログイン</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">サインアップ</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+            <div class="max-w-7xl mx-auto p-6 lg:p-8">
+                <div class="flex justify-left">
+                    <img src="<?php echo e(asset('img/ONSENDOU.png')); ?>" width="20%" height="20%" class="mb-5 pt-5 mt-5">
+                </div>
+            </div>    
+
+                <div class="mt-16">
+                   <img src="<?php echo e(asset('img/toppage.jpg')); ?>" width="100%" height="100%" class="mb-5 pt-5 mt-5"></img>
+                 </div>  
+                   
+                <div class="mt-16">
+                    <div class="flex justify-center">
+                      <img src="<?php echo e(asset('img/ONSENDOU.png')); ?>" width="20%" height="20%" class="mb-5 pt-5 mt-5"></img>
+                    </div>  
+                    <div class="flex justify-center">
+                       <div class ="mt-16">
+                         出先での帰り道に温泉によってもらいたい。
+                       </div>
+                    </div>
+                    <div class="flex justify-center">
+                       <div class ="mt-16">
+                         利用際の疑問を解消できる手助けになれば、、、
+                       </div>
+                    </div>
+                    <div class="flex justify-center">
+                       <div class ="mt-16">
+                         そんな想いから開発にあたりました
+                       </div>
+                    </div>
+                </div>    
+                   
+                   <div class="mt-16">
+                     <img src="<?php echo e(asset('img/toppage2.jpg')); ?>" width="100%" height="100%" class="mb-5 pt-5 mt-5"></img>     
+                   </
+            
     </body>
 </html>

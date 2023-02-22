@@ -1,30 +1,26 @@
- 
     <header>
-        <nav class="mt-4 pt-4 ">
-         <div class="container mt-4 pt-4 ">
-            <img src="<?php echo asset('img/ONSENDOU.png') ?>" alt="onsen" width="20%" height="20%"></img>
-             <ul class="navbar-nav ">
-              <div class="collapse justify-content-end" id="navbarNavDropdown">    
-                <li>
-                  <a class="nav-link" href="{{ route('register') }}">サインアップ</a>
-                </li>
-                <li>
-                 <a class="nav-link" href="{{ route('login') }}">ログイン</a>
-                </li>
-                <li>
-                 <a class="nav-link" href="{{ url('/') }}">温泉道について</a>
-                </li>
-               </div> 
-             </ul> 
-         </div>
-       </nav> 
+        @if (Route::has('login'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right mt-4">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="font-semibold">温泉について</a>
+                    @else
+                        <a href="{{ route('login') }}" class="ml-4 font-semibold">ログイン</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold">サインアップ</a>
+                        @endif   
+                    @endauth
+                </div>
+            @endif
+            
+            <div class="max-w-7xl mx-auto p-6 lg:p-8">
+                <div class="flex justify-left">
+                    <img src="<?php echo e(asset('img/ONSENDOU.png')); ?>" width="20%" height="20%" class="mb-5 pt-5 mt-5">
+                </div>
+            </div> 
     </header>  
-      
-
-      
-
-<x-guest-layout>
     
+    
+<x-guest-layout>
  <form method="POST" action="{{ route('login') }}" class="bg-home d-flex align-items-center w-150 h-150">
     @csrf
     <div class="container">

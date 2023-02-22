@@ -9,7 +9,7 @@
         
         <!--Bootstrap-->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.2.3/css/bootstrap.min.css">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
