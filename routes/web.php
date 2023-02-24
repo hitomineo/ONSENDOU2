@@ -3,9 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Http\Controllers\PostController; //Add
+use App\Http\Controllers\PostController; //追記
 use App\Http\Controllers\LikeController;
-use App\Models\Post; //Add
+use App\Models\Post; //追記
 use App\Models\Like;
 
 /*
@@ -33,5 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+Route::resource('posts', PostController::class); //追記
 
 require __DIR__.'/auth.php';

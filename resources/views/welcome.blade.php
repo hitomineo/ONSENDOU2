@@ -65,7 +65,7 @@
                    
                    <div class="mt-16">
                      <img src="<?php echo e(asset('img/toppage2.jpg')); ?>" width="100%" height="100%" class="mb-5 pt-5 mt-5"></img>     
-                   </
+                   </div>
             
     </body>
 </html>

@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('onsen_name');
             $table->string('detail')->nullable();
             $table->string('address')->nullable();
@@ -28,6 +27,7 @@ return new class extends Migration
             $table->string('hairdryer');
             $table->string('luggage');
             $table->string('star')->nullable();
+            $table->text('image');
             $table->timestamps();
         });
     }
