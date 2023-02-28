@@ -13,16 +13,17 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex dark:text-gray-400">
                     <x-nav-link>
-                        <a href="{{ route('login') }}" class="mt-4 pt-4 font-semibold">ログイン</a>
-                        <a href="{{ route('login') }}" class="mt-4 pt-4 font-semibold">ログイン</a>
-                        <a href="{{ route('login') }}" class="mt-4 pt-4 font-semibold">ログイン</a>
-                        <a href="{{ route('logout') }}" class="mt-4 pt-4 font-semibold">ログイン</a>
+                        <a href="{{ url('/posts/create') }}" class="mt-4 pt-4 font-semibold">投稿</a>
+                        <a href="{{ url('/posts/show') }}" class="mt-4 pt-4 font-semibold">マイページ</a>
+                        <a href="{{ url('/dashboard') }}" class="mt-4 pt-4 font-semibold">投稿一覧</a>
+                        <a href="{{ url('/like') }}" class="mt-4 pt-4 font-semibold">いいね一覧</a>
+                        <a href="{{ url('/') }}" class="mt-4 pt-4 font-semibold">温泉道について</a>
                     </x-nav-link>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class ="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger" >
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400  hover:text-gray-700 dark:hover:text-gray-300 transition ease-in-out duration-150">
@@ -40,10 +41,17 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('プロフィール') }}
                         </x-dropdown-link>
+                       
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
+                            
+                            <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                            {{ __('ログアウト') }}
+                            </x-dropdown-link>
                         </form>
                     </x-slot>
                 </x-dropdown>

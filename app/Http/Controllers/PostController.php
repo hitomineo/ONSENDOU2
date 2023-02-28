@@ -89,7 +89,7 @@ class PostController extends Controller
          // データベースに保存
          $post->save();
          // indexページへ遷移
-         return redirect('/posts');
+         return redirect('/posts/index');
     }
 
     /**
@@ -97,7 +97,7 @@ class PostController extends Controller
      */
     public function show(Post $post): Response
     {
-         $post = Post::find($id); // idでItemを探し出す
+         $post = Post::find($id); // idでPostを探し出す
          return view('post.show', ['post' => $post]);
     }
 
